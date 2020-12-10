@@ -1,7 +1,5 @@
 version: '3.8'
-
 services:
-
   client:
     container_name: client
     build: 
@@ -10,9 +8,34 @@ services:
     ports: 
       - 8080:8080
     volumes:
-      - ./client:/front
-      - node_modules:/front/node_modules
+      - ./client:/client
+      - node_modules:/client/node_modules
     command: bash -c "yarn install && yarn dev"
+
+  api:
+    container_name: api
+    build: 
+      context: .
+      dockerfile: ./api/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./api:/api
+    command: bash -c "rails server -b '0.0.0.0'"
+    env_file: ./db.env
+    depends_on:
+      - db
+    networks: 
+      - project_network
+
+  db:
+    container_name: db
+    image: postgres
+    volumes: 
+      - db:/var/lib/postgresql/data
+    env_file: ./db.env
+    networks: 
+      - project_network
 
 networks:
   project_network:

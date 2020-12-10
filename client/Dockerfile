@@ -1,11 +1,7 @@
-FROM node:latest
-
-RUN mkdir /client
+FROM node:15
 
 WORKDIR /client
 
-COPY . /client
+COPY ./testScripts/test-client.sh /testScripts/test.sh
 
-RUN yarn install
-
-CMD ["yarn", "run", "dev"]
+RUN chmod +x /testScripts/test.sh
