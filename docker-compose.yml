@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  client:
+    container_name: client
+    build: 
+      context: .
+      dockerfile: ./client/Dockerfile
+    ports: 
+      - 8080:8080
+    volumes:
+      - ./client:/front
+      - node_modules:/front/node_modules
+    command: bash -c "yarn install && yarn dev"
+
+networks:
+  project_network:
+
+volumes:
+  node_modules:
+  db:
+  gems:
