@@ -1,5 +1,7 @@
 # Solução
 
+[![Build Status](https://travis-ci.org/VictorRodriguesS0/Trabalho-Individual-2020-1.svg?branch=master)](https://travis-ci.org/VictorRodriguesS0/Trabalho-Individual-2020-1)
+
 ## Containerização
 
 Para containerização do trabalho foram utilizado Docker e Docker-compose
