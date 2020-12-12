@@ -20,6 +20,7 @@ jobs:
 
     - stage: test
     - script:
+        - yarn global add @vue/cli
         - docker-compose run --rm client yarn run test:unit
     - script:
         - docker-compose run --rm api bundle exec rails test
