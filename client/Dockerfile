@@ -7,3 +7,4 @@ COPY . .
 RUN yarn install
 
 RUN yarn global add @vue/cli
+RUN yarn @vue/cli-service-global
