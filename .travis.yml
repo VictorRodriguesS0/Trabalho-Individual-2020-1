@@ -15,8 +15,35 @@ before_install:
 jobs:
   include:
     - stage: build
+
     - script: docker-compose up --build -d
 
     - stage: test
-    - script: docker-compose run --rm client yarn run test:unit
-    - script: docker-compose run --rm api bundle exec rails test
+    - script:
+        - docker-compose run --rm client yarn run test:unit
+    - script:
+        - docker-compose run --rm api bundle exec rails test
+    
+    - stage: deploy client
+      script: skip
+      before_deploy:
+      - cd client
+      deploy:
+        provider: heroku
+        api_key: $SECURE_KEY
+        app: $CLIENT_NAME
+        on:
+          branch: master
+
+    - stage: deploy api
+      script: skip
+      before_deploy:
+      - cd api
+      deploy:
+        provider: heroku
+        api_key: $SECURE_KEY
+        app: $API_NAME
+        on:
+          branch: master
+        
+
