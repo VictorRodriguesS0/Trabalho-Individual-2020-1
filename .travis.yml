@@ -1,0 +1,22 @@
+language: generic
+
+services:
+ - docker
+
+stages:
+  - build
+  - test
+
+before_install:
+  - sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
+  - sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+  - sudo chmod +x /usr/bin/docker-compose
+
+jobs:
+  include:
+    - stage: build
+    - script: docker-compose up --build -d
+
+    - stage: test
+      script: docker-compose run --rm client yarn run test:unit
+      script: docker-compose run --rm api bundle exec rails test
