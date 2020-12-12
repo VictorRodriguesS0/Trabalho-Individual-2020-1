@@ -2,6 +2,8 @@ FROM node:10
 
 WORKDIR /client
 
-COPY ./testScripts/test-client.sh /testScripts/test.sh
+COPY . .
 
-RUN chmod +x /testScripts/test.sh
+RUN yarn install
+
+RUN yarn global add @vue/clisudo
