@@ -6,4 +6,4 @@ COPY . .
 
 RUN yarn install
 
-RUN yarn global add @vue/clisudo
+RUN yarn global add @vue/cli
