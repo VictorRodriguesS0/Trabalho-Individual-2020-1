@@ -2,9 +2,13 @@ FROM node:10
 
 WORKDIR /client
 
-COPY . .
+COPY package.json ./
 
 RUN yarn install
 
+
+COPY . .
+
+
 RUN yarn global add @vue/cli
-RUN yarn @vue/cli-service-global
+RUN yarn global add @vue/cli-service-global
