@@ -20,7 +20,7 @@ jobs:
 
     - stage: test
     - script:
-        - docker-compose run --rm client yarn run test:unit
+        - docker-compose run --rm $(bash <(curl -s https://codecov.io/env)) client yarn run test:unit
     - after_success:
         - codecov
     - script:
