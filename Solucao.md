@@ -15,7 +15,7 @@ Para rodar todo o projeto, basta executar o comando abaixo:
     docker-compose up
 ```
 
-Para acessar o projeto m funcionamento, basta acessar os endpoints:
+Para acessar o projeto em funcionamento, basta acessar os endpoints:
 
 - Frontend: [http://localhost:8080/](http://localhost:8080/)
 - BackEnd: [http://localhost:3000/](http://localhost:3000/)
@@ -41,3 +41,12 @@ Para rodar todo os testes do projeto, basta executar os comando abaixo:
 ### Integração Contínua
 
 Foram utilizados o Travis-CI para integração contínua do projeto, juntamente com o code-climate para verificar manutenibilidade do código.
+
+### Deploy Contínuo
+
+Foi ultilizado o Heroku para deploy contínuo do aplicação.
+
+Para acessar o projeto em funcionamento, basta acessar os endpoints:
+
+- Frontend: [https://gces-client-ti1.herokuapp.com/](https://gces-client-ti1.herokuapp.com/)
+- BackEnd: [https://gces-api-ti1.herokuapp.com/](https://gces-api-ti1.herokuapp.com/)
