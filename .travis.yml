@@ -23,7 +23,7 @@ jobs:
 
     - stage: test
     - script:
-        - docker-compose run $ci_env && --rm client yarn run test:unit && $ci_post_cov
+        - docker-compose run $ci_env --rm client yarn run test:unit $ci_post_cov
     - after_success:
         - codecov
     - script:
