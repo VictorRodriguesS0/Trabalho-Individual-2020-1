@@ -17,13 +17,12 @@ jobs:
     - stage: build
 
     - script: docker-compose up --build -d
-    - script: bash <(curl -s https://codecov.io/env)
-    - script: codecov
+    - script: ci_env="bash <(curl -s https://codecov.io/env)"
 
 
     - stage: test
     - script:
-        - docker-compose run --rm client yarn run test:unit
+        - docker-compose run $ci_env --rm client yarn run test:unit
     - after_success:
         - codecov
     - script:
