@@ -1,6 +1,7 @@
 # Solução
 
 [![Build Status](https://travis-ci.org/VictorRodriguesS0/Trabalho-Individual-2020-1.svg?branch=master)](https://travis-ci.org/VictorRodriguesS0/Trabalho-Individual-2020-1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a7b89fc83e4bdf199f8d/maintainability)](https://codeclimate.com/github/VictorRodriguesS0/Trabalho-Individual-2020-1/maintainability)
 
 ## Containerização
 
@@ -36,4 +37,7 @@ Para rodar todo os testes do projeto, basta executar os comando abaixo:
 
     docker-compose run --rm api bundle exec rails test
 ```
+
 ### Integração Contínua
+
+Foram utilizados o Travis-CI para integração contínua do projeto, juntamente com o code-climate para verificar manutenibilidade do código.

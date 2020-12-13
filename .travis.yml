@@ -21,6 +21,8 @@ jobs:
     - stage: test
     - script:
         - docker-compose run --rm client yarn run test:unit
+    - after_success:
+        - codecov
     - script:
         - docker-compose run --rm api bundle exec rails test
     
