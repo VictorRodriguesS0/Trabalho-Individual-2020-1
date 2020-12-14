@@ -2,13 +2,17 @@
   "name": "",
   "version": "",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve --host 0.0.0.0",
-    "docker": "./docker-test-script.sh"
+    "docker": "./docker-test-script.sh",
+    "start": "vue-cli-service serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
